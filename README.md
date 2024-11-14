@@ -1,54 +1,7 @@
 
-```md
 # PDF Book Chapter Splitter
 
 This Python script splits a PDF book into individual chapters based on the table of contents (TOC). It uses OpenAI's GPT-4 to analyze the TOC and extract chapter titles and page ranges, then splits the book into separate PDF files for each chapter.
-
-## Features
-
-- Extracts the first 15 pages of a PDF to analyze the table of contents.
-- Uses GPT-4 to identify chapter titles and their respective page ranges.
-- Adjusts page numbers based on the actual start page of Chapter 1 in the PDF.
-- Splits the book into individual chapter PDFs and saves them to a specified directory.
-
-## Requirements
-
-- **Python**: 3.6+
-- **OpenAI API Key**: Required for GPT-4 analysis
-- **Python Packages**:
-  - `PyPDF2`
-  - `openai`
-  - `python-dotenv`
-
-## Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/pdf-chapter-splitter.git
-cd pdf-chapter-splitter
-```
-
-### 2. Create a virtual environment (optional but recommended)
-
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Set up OpenAI API key
-
-Create a `.env` file in the root directory of the project and add your OpenAI API key:
-
-```bash
-OPENAI_API_KEY=your_openai_api_key_here
-```
 
 ## Usage
 
@@ -57,7 +10,7 @@ The script takes a PDF file as input, analyzes its table of contents, and splits
 ### Command-line Arguments
 
 ```bash
-python3 splitter.py <pdf_path> <actual_page> <listed_page> [--output-dir <output_dir>]
+python3 split_chapterwise.py <pdf_path> <actual_page> <listed_page> [--output-dir <output_dir>]
 ```
 
 - `<pdf_path>`: Path to the input PDF file.
@@ -98,32 +51,13 @@ For example:
 3. **Adjust Page Numbers**: Since books often have discrepancies between listed and actual page numbers, you provide both, and the script adjusts accordingly.
 4. **Split Chapters**: Finally, it splits the book into individual chapter PDFs based on these adjusted page ranges.
 
-## Error Handling
-
-If any errors occur during execution (e.g., invalid file paths or issues with GPT analysis), they will be printed to the console along with an appropriate error message.
-
-## Project Structure
-
-```
-pdf-chapter-splitter/
-│
-├── splitter.py           # Main Python script for splitting PDFs into chapters
-├── requirements.txt      # Required Python packages
-├── README.md             # Project documentation (this file)
-└── .env                  # File storing OpenAI API key (not included in repo)
-```
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
+This project is licensed under the MIT License.
 
-## Contributing
-
-Contributions are welcome! If you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
 ---
 
 ### Author
 
-Sehaj + Gpt4
-
-``` 
+Sehaj + Gpt4 
